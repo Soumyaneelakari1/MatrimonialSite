@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 60px;
+            margin-left: 40px;
+        }
+
+        .site-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            margin-top: 5px;
+        } */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+            background-color: orange;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+        .new {
+            display: flex;
+            justify-content: left;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            border-radius: 60px;
+            margin-left: 20px;
+            margin-top: 15px;
+            /* margin: 40px auto 0 auto; */
+        }
+
+        .site-name {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            /* margin-top: 5px; */
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+            margin: auto;
+        }
+
+        .left-panel {
+            width: 40%;
+            background-color: #e8f5e9;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .left-panel img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .right-panel {
+            width: 60%;
+            padding: 30px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        .char-count {
+            font-size: 14px;
+            color: gray;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .continue-btn {
+            background: #ff9800;
+            color: white;
+            font-size: 18px;
+            padding: 14px;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .continue-btn:hover {
+            background: #e68900;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .left-panel {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .right-panel {
+                width: 100%;
+            }
+        }
+
+        footer {
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="new">
+            <div class="logo"> 
+                <img src="logo1.jpg" alt="Kannada Matrimony"> 
+                
+            </div>
+            <div>
+                <p class="site-name">Uppar Samaj Matrimony</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-panel">
+            <img src="logo1.jpg" alt="Marriage Icon">
+            <p class="success-text">Your happily ever after is just a step away.</p>
+        </div>
+        <div class="right-panel">
+            <h3>Let's write something interesting about you</h3>
+            <form>
+                <div class="form-group">
+                    <label for="about">About You:</label>
+                    <textarea id="about" placeholder="Write about yourself..."></textarea>
+                    <div class="char-count" id="charCount">0 Characters Typed.</div>
+                    <a href="help.html" id="helpLink"
+                        style="margin-left: 10px; font-size: 14px; color: #ff9800; text-decoration: none;">Help me
+                        write</a>
+
+                </div>
+                <button type="submit" class="continue-btn">Complete</button>
+            </form>
+        </div>
+       
+    </div>
+    <footer>
+        <p>This website is strictly for matrimonial purposes only and not a dating website. Copyright © 2025. All
+            rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('about').addEventListener('input', function () {
+            let charCount = this.value.length;
+            document.getElementById('charCount').innerText = charCount + " Characters Typed.";
+
+            let completeBtn = document.querySelector('.continue-btn');
+            completeBtn.disabled = charCount < 12;
+        });
+
+        // Initially disable the button
+        document.querySelector('.continue-btn').disabled = true;
+        onSubmit{
+
+        }
+    </script>
+
+</body>
+
+</html>

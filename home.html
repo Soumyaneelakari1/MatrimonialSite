@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Samaj Matrimoniaa site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="new">
+        <div class="logo"> 
+            <img src="logo1.jpg" alt="Kannada Matrimony"> 
+            
+        </div>
+        <div>
+            <p class="site-name">Uppar Samaj Matrimony</p>
+        </div>
+    </div>
+        <nav>
+            <a href="login2.html">Already a member?</a>
+            <button type="button" id="loginButton">LOG IN</button>
+            <div class="help-container">
+                <a href="#" id="helpButton">&#x2753; Help</a>
+                <div class="help-content" id="helpContent">
+                    <p><strong>24x7 HELP:</strong></p>
+                    <p>INDIA: 0-8144-99-88-77</p>
+                    <p>UAE: +971 525060879</p>
+                    <ul>
+                     <li><a href="#">Live Help</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                   <li><a href="#">Business Queries</a></li>
+                </ul>
+                 
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-content">
+            <section class="hero">
+                <h1>The biggest and most trusted matrimony service for Kannadigas!</h1>
+                <p>Now find matches based on your hobbies & interests</p>
+            </section>
+            <section class="registration">
+                <div class="form-container">
+                    <h2>Create Samaj Matrimonial Profile</h2>
+                    <form id="registerForm">
+                        <label>Samaj Matrimonial profile for</label>
+                        <select>
+                            <option>Self</option>
+                            <option>Son</option>
+                            <option>Daughter</option>
+                            <option>Relative</option>
+                        </select>
+                        <input type="text" id="name" placeholder="Enter Name" required>
+                        <input type="tel" id="phone" placeholder="Enter Number" required>
+                        <button type="submit">REGISTER FREE</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <section class="profiles">
+            <div class="profile"><img src="p9.jpg" alt="Couple"><p>#Yoga Enthusiast</p></div>
+            <div class="profile"><img src="p2.jpg" alt="Couple"><p>#Photography</p></div>
+            <div class="profile"><img src="p10.jpg" alt="Couple"><p>#Music Lover</p></div>
+            <div class="profile"><img src="p7.jpg" alt="Couple"><p>#Travel Enthusiast</p></div>
+            <div class="profile"><img src="p11.jpg" alt="Couple"><p>#Foodie</p></div>
+            <div class="profile"><img src="p12.jpg" alt="Couple"><p>#Adventure Seeker</p></div>
+            <div class="profile"><img src="p13.jpg" alt="Couple"><p>#Fitness Freak</p></div>
+            <div class="profile"><img src="p8.jpg" alt="Couple"><p>#Bookworm</p></div>
+            <div class="profile"><img src="p14.jpg" alt="Couple"><p>#Art Lover</p></div>
+            <div class="profile"><img src="p15.jpg" alt="Couple"><p>#Nature Enthusiast</p></div>
+            <div class="profile"><img src="p16.jpg" alt="Couple"><p>#Tech Enthusiast</p></div>
+            <div class="profile"><img src="p17.jpg" alt="Couple"><p>#Movie Buff</p></div>
+        </section>
+        <section class="limca-records">
+            <img src="a1.jpg" alt="100% Verified">
+            <p><strong>100%</strong> Mobile-verified profiles</p>
+            <img src="a2.jpg" alt="Customers">
+            <p><strong>4 Crores+</strong> Customers served</p>
+            <img src="a3.jpg" alt="Handshake">
+            <p><strong>23 Years</strong> of successful matchmaking</p>
+        </section>
+    </main>
+    <footer>
+        <p>This website is strictly for matrimonial purposes only and not a dating website. Copyright © 2025. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            if (name && phone) {
+                alert("Registration successful for " + name);
+                window.location.href = "page1.html";
+            } else {
+                alert("Please fill all fields.");
+            }
+        });
+
+        document.getElementById("loginButton").addEventListener("click", function() {
+            window.location.href = "login2.html";
+        });
+
+        document.getElementById("helpButton").addEventListener("mouseenter", function() {
+            document.getElementById("helpContent").style.display = "block";
+        });
+
+        document.querySelector(".help-container").addEventListener("mouseleave", function() {
+            document.getElementById("helpContent").style.display = "none";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.logo {
+    margin-left: 150px;
+}
+.logo img {
+    height: 100px;
+}
+
+nav {
+    margin-right: 80px;
+}
+nav a {
+    margin-left: 40px;  /* Shifted to the right by 20px */
+    text-decoration: none;
+    color: #333;
+}
+
+nav button {
+    background-color: #ff8c00;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Logout Message */
+.logout-message {
+    background-color: #e7f4ff;
+    color: #0073e6;
+    padding: 10px;
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* App Download Section */
+.app-download {
+    margin-top: 20px;
+}
+
+.app-download h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.store-buttons img {
+    height: 40px;
+    margin: 10px;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    margin-top: 20px;
+    margin-right: 30px; /* Adjust right spacing */
+}
+
+/* Login Box Styling */
+.login-box {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 150px;
+}
+
+/* Ensuring all inputs are aligned and same size */
+.login-box h3 {
+    margin-bottom: 15px;
+    color: #008000;
+}
+
+.login-box input {
+    width: 100%;  /* Ensure inputs fill the entire width */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Prevent padding from affecting width */
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;  /* Ensures the password input matches the others */
+}
+
+.password-container span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Correct alignment for Keep me logged in checkbox and label */
+/* Correct alignment for Keep me logged in checkbox and label */
+.keep-logged {
+    display: flex;
+    align-items: center; /* Align checkbox and label in the same line */
+    gap: 15px; /* Reduce gap between checkbox and label */
+    padding-bottom: 15px;
+}
+
+.keep-logged input {
+    margin: 0; /* Remove extra margin */
+    width: 16px; /* Adjust checkbox size if needed */
+    height: 16px;
+    
+}
+
+
+#loginBtn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px;
+    width: 100%; /* Ensure the button spans the full width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginBtn:hover {
+    background-color: #e67e00;
+}
+
+.trouble-login {
+    margin-top: 10px;
+    font-size: 12px; /* Decrease the font size */
+}
+
+.trouble-login a {
+    color: #0073e6;
+    text-decoration: none;
+    font-size: 12px; /* Ensure the font size of links is smaller */
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}

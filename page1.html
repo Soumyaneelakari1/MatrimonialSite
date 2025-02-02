@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details Form</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+            background-color: orange;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+        .new {
+            display: flex;
+            justify-content: left;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            border-radius: 60px;
+            margin-left: 20px;
+            margin-top: 15px;
+            /* margin: 40px auto 0 auto; */
+        }
+
+        .site-name {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            /* margin-top: 5px; */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 60px;
+            margin-left: 40px;
+        }
+
+        .site-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            margin-top: 5px;
+        } */
+
+        .container {
+            display: flex;
+            width: 1100px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+            padding-top: 60px;
+            margin: auto;
+        }
+
+        .left-panel {
+            width: 40%;
+            background-color: #e8f5e9;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .left-panel img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .right-panel {
+            width: 60%;
+            padding: 30px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            width: 140px;
+            text-align: right;
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        .option-btn {
+            background: #f0f0f0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+
+        .option-btn:hover,
+        .selected {
+            background: #ff9800;
+            color: white;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .continue-btn {
+            background: #ff9800;
+            color: white;
+            font-size: 18px;
+            padding: 14px;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .continue-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .left-panel {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .right-panel {
+                width: 100%;
+            }
+
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            label {
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        footer {
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="new">
+            <div class="logo"> 
+                <img src="logo1.jpg" alt="Kannada Matrimony"> 
+                
+            </div>
+            <div>
+                <p class="site-name">Uppar Samaj Matrimony</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-panel">
+            <img src="logo1.jpg" alt="Marriage Icon">
+            <p class="success-text">Thousands of Success Stories! <br> Yours could be next.</p>
+        </div>
+        <div class="right-panel">
+            <h3>Personal details get you the right matches</h3>
+            <form id="detailsForm" action="page2.html" method="GET">
+
+                <div class="form-group">
+                    <label>Marital Status:</label>
+                    <div class="options" data-required="true">
+                        <button type="button" class="option-btn">Never Married</button>
+                        <button type="button" class="option-btn">Widowed</button>
+                        <button type="button" class="option-btn">Divorced</button>
+                        <button type="button" class="option-btn">Awaiting Divorce</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Height:</label>
+                    <select id="heightSelect">
+                        <option value="">Select Height</option>
+                        <option>5'0"</option>
+                        <option>5'1"</option>
+                        <option>5'2"</option>
+                        <option>5'3"</option>
+                        <option>5'4"</option>
+                        <option>5'5"</option>
+                        <option>5'6"</option>
+                        <option>5'7"</option>
+                        <option>5'8"</option>
+                        <option>5'9"</option>
+                        <option>5'10"</option>
+                        <option>5'11"</option>
+                        <option>6'0"</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Family Status:</label>
+                    <div class="options" data-required="true">
+                        <button type="button" class="option-btn">Middle class</button>
+                        <button type="button" class="option-btn">Upper middle class</button>
+                        <button type="button" class="option-btn">High class</button>
+                        <button type="button" class="option-btn">Rich/Affluent</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Family Type:</label>
+                    <div class="options" data-required="true">
+                        <button type="button" class="option-btn">Joint</button>
+                        <button type="button" class="option-btn">Nuclear</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Any Disability:</label>
+                    <div class="options" data-required="true">
+                        <button type="button" class="option-btn selected">None</button>
+                        <button type="button" class="option-btn">Physically Challenged</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="continue-btn" id="continueBtn" disabled>Continue</button>
+            </form>
+        </div>
+
+    </div>
+    <footer>
+        <p>This website is strictly for matrimonial purposes only and not a dating website. Copyright © 2025. All
+            rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.option-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                let parentDiv = button.parentNode;
+                parentDiv.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+                checkFormValidity();
+            });
+        });
+
+        document.getElementById('heightSelect').addEventListener('change', checkFormValidity);
+
+        function checkFormValidity() {
+            let allValid = true;
+            document.querySelectorAll('.options[data-required]').forEach(group => {
+                if (!group.querySelector('.selected')) {
+                    allValid = false;
+                }
+            });
+
+            if (document.getElementById('heightSelect').value === "") {
+                allValid = false;
+            }
+
+            document.getElementById('continueBtn').disabled = !allValid;
+        }
+
+        document.getElementById('detailsForm').addEventListener('submit', (event) => {
+            if (document.getElementById('continueBtn').disabled) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
