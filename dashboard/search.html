@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony Search Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        label {
+            width: 40%;
+            /* font-weight: bold; */
+        }
+        .input-group {
+            width: 55%;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        input[type="text"], select, input[type="number"] {
+            width: 100%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .view-more, .read-more {
+            color: #007bff;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .nearby{
+            width: 50%;
+            white-space: nowrap;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search profiles using the below criteria</h2>
+
+        <div class="form-section">
+            <h3>Basic Details</h3>
+            <form>
+                <div class="form-group">
+                    <label for="age_from">Age:</label>
+                    <div class="input-group">
+                        <input type="number" name="age_from" value="27" min="18" max="99"> 
+                        <span>to</span>
+                        <input type="number" name="age_to" value="35" min="18" max="99">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="height_from">Height:</label>
+                    <div class="input-group">
+                        <select name="height_from">
+                            <option value="137">4'6"</option>
+                            <option value="140">4'7"</option>
+                        </select> 
+                        <span>to</span>
+                        <select name="height_to">
+                            <option value="155">5'1"</option>
+                            <option value="157">5'2"</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="profile_created_by">Profile Created By:</label>
+                    <div class="input-group">
+                        <select name="profile_created_by">
+                            <option value="any">Any</option>
+                            <option value="self">Self</option>
+                            <option value="parent">Parent</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="view-more" onclick="toggleViewMore()">View more ▼</div>
+                <div id="additional-basic" class="hidden">
+                    <div class="form-group">
+                        <label for="marital_status">Marital Status:</label>
+                        <div class="input-group">
+                            <select name="marital_status">
+                                <option value="any">Any</option>
+                                <option value="single">Single</option>
+                                <option value="divorced">Divorced</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mother_tongue">Mother Tongue:</label>
+                        <div class="input-group">
+                            <select name="mother_tongue">
+                                <option value="kannada">Kannada</option>
+                                <option value="telugu">Telugu</option>
+                                <option value="tamil">Tamil</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="physical_status">Physical Status:</label>
+                        <div class="input-group">
+                            <select name="physical_status">
+                                <option value="any">Any</option>
+                                <option value="normal">Normal</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Religious Details</h3>
+                <div class="form-group">
+                    <label for="religion">Religion:</label>
+                    <div class="input-group">
+                        <select name="religion">
+                            <option value="hindu" selected>Hindu</option>
+                            <option value="muslim">Muslim</option>
+                            <option value="christian">Christian</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Caste:</label>
+                    <div class="input-group">
+                        <select name="caste">
+                            <option value="lingayath">Lingayath</option>
+                            <option value="hugar">Hugar (Jeer)</option>
+                        </select>
+                    
+                    </div>
+                </div>
+
+                <h3>Professional details</h3>
+                <div class="form-group">
+                    <label for="occupation">Occupation:</label>
+                    <div class="input-group">
+                        <select name="occupation">
+                            <option value="any">Any</option>
+                            <option value="self">BE</option>
+                            <option value="parent">Mcom</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="income_from">Annual Income:</label>
+                    <div class="input-group">
+                        <input type="number" name="income_from" value="27" min="18" max="99"> 
+                        <span>to</span>
+                        <input type="number" name="income_to" value="35" min="18" max="99">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="employement-type">Employment Type:</label>
+                    <div class="input-group">
+                        <select name="employement-type">
+                            <option value="any">Any</option>
+                            <option value="self">Senior</option>
+                            <option value="parent">Junior</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="education">Education:</label>
+                    <div class="input-group">
+                        <select name="profile_created_by">
+                            <option value="any">Any</option>
+                            <option value="self">Self</option>
+                            <option value="parent">Parent</option>
+                        </select>
+                    </div>
+                </div>
+                <h3>Location Details</h3>
+                <div class="form-group">
+                    <label for="nearby-profiles" class="nearby">Nearby Profiles:</label>
+                    <div class="input-group">
+                        <input type="checkbox"><label for="matches">Matches near your location</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <div class="input-group">
+                        <select name="country">
+                            <option value="any">Any</option>
+                            <option value="self">India</option>
+                            <option value="parent">Pakistan</option>
+                        </select>
+                    </div>
+                </div>
+                 
+                <h3>Lifestyle</h3>
+                <div class="form-group">
+                    <label for="mutual-hobbies" class="nearby">Mutual Hobbies:</label>
+                    <div class="input-group">
+                        <input type="checkbox"><label for="matches">Matches near your location</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="eating-habits">Eating Habits:</label>
+                    <div class="input-group">
+                        <select name="country">
+                            <option value="any">Any</option>
+                            <option value="self">veg</option>
+                            <option value="parent">Nonveg</option>
+                        </select>
+                    </div>
+                </div>
+                <h3>Family Details</h3>
+                
+                <div class="form-group">
+                    <label for="family-status">Family Status:</label>
+                    <div class="input-group">
+                        <select name="country">
+                            <option value="any">Any</option>
+                            <option value="self">Nuclear</option>
+                            <option value="parent">Joint</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleViewMore() {
+            const section = document.getElementById('additional-basic');
+            const button = document.querySelector('.view-more');
+            section.classList.toggle('hidden');
+            button.textContent = section.classList.contains('hidden') ? 'View more ▼' : 'View less ▲';
+        }
+
+        
+    </script>
+</body>
+</html>
