@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Upload</title>
+  <style>
+    .preview {
+      display: flex;
+      gap: 10px;
+    }
+    .preview img {
+      max-width: 150px;
+      max-height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Upload Images</h2>
+    
+    <!-- Input to upload images -->
+    <input type="file" id="imageInput" multiple accept="image/*">
+    
+    <!-- Container to show preview of selected images -->
+    <div class="preview" id="imagePreview"></div>
+  </div>
+
+  <script>
+    // Function to handle the image upload and display preview
+    document.getElementById("imageInput").addEventListener("change", function(event) {
+      const files = event.target.files;
+      const previewContainer = document.getElementById("imagePreview");
+      
+      // Clear any existing previews
+      previewContainer.innerHTML = "";
+      
+      // Loop through each selected file
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        
+        // Check if the file is an image
+        if (file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            previewContainer.appendChild(img);
+          };
+          
+          reader.readAsDataURL(file); // Convert the image to base64 URL for preview
+        }
+      }
+    });
+  </script>
+</body>
+</html>
